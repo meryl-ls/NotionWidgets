@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+
+	<!-- Google Font -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Lato:wght@700&display=swap" rel="stylesheet">
+
+	<!-------->
+
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			-webkit-box-sizing: border-box;
+			box-sizing: border-box;
+		}
+
+
+		.navMenu {
+			font-family: 'Quicksand', sans-serif;
+			padding: 8px;
+			text-align: center;
+			margin: 7px auto;
+			width: fit-content;
+		}
+
+		.navMenu a {
+			color: #272727;
+			text-decoration: none;
+			text-transform: uppercase;
+			display: inline-block;
+			padding: 6px;
+		}
+
+		.background {
+			background-color: #ece5f0;
+		}
+
+		.border {
+			border: 1px solid #cccccc;
+
+		}
+
+		.navMenu a:hover {
+
+			color: #A2DFFF;
+		}
+	</style>
+</head>
+
+<body>
+
+	<nav class="navMenu  border">
+		<a id="home" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-house"></i> </a>
+		<a id="braindump" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-brain"></i>  </a>
+		<a id="ideas" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-lightbulb"></i>  </a>
+		<a id="comic" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-comment-dots"></i> </a>
+		<a id="workhub" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-briefcase"></i>  </a>
+		<a id="creatorpack" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-photo-film"></i>  </a>
+		<a id="artcalendar" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-calendar-day"></i>  </a>
+		<a id="studies" onclick="navigate(this.id)" href="#"> <i class="fa-solid fa-building-columns"></i> </a>
+	
+
+
+
+	</nav>
+
+
+	<script>
+
+		let direction = "horizontal";
+		if (direction === "vertical") {
+			document.head.insertAdjacentHTML("beforeend", `<style>.navMenu a {display: block; text-align:left; margin:7px} i{width:15px; margin-right:5px} .navMenu{margin:3px}</style>`)
+		}
+
+
+		function navigate(id) {
+
+			if (id == 'home')
+				window.open("https://www.notion.so/raissaozsari/Home-1c691d550fe44b9ca12af46b05521c9c?pvs=4", '_blank').focus();
+			else if (id == "braindump")
+				window.open("https://www.notion.so/raissaozsari/de379661afae46c9abbf85169b510a24?v=6a405dd8d0d648f7952e747d0ab7bf46&pvs=4", '_blank').focus();
+			else if (id == "ideas")
+				window.open("https://www.notion.so/raissaozsari/74fa75f473a04448ab7b0879f3be4c85?v=d8e52c7eab26434baa46d92aa7ff7d2f&pvs=4", '_blank').focus();
+			else if (id == "comic")
+				window.open("https://www.notion.so/raissaozsari/Comic-b7713488aefe4cb288b696b053c9479f?pvs=4", '_blank').focus();
+			else if (id == "workhub")
+				window.open("https://www.notion.so/raissaozsari/Work-Hub-a4dfaa9e1381468cb641b8c4f16a24ec?pvs=4", '_blank').focus();
+			else if (id == "creatorpack")
+				window.open("https://www.notion.so/raissaozsari/Creator-Pack-a4aa4977972c4f7bbf7094888634f872?pvs=4", '_blank').focus();
+			else if (id == "artcalendar")
+				window.open("https://www.notion.so/raissaozsari/82f2f84abec540ff837904305dc6d686?v=43db03a807ea488ea8556e5aee7ae20a&pvs=4", '_blank').focus();
+			else if (id == "studies")
+				window.open("https://www.notion.so/raissaozsari/dd9600eaab8a467f85d0619d48819bba?v=aabe37ef5a0f4c1bbe85766b0dca7fc4&pvs=4", '_blank').focus();
+			
+		}
+	</script>
+
+
+</body>
+
+</html>
