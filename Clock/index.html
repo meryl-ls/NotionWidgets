@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notion Clock</title>
+    <script src="https://kit.fontawesome.com/02929a4e1a.js" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+
+    <style>
+
+        body {background-color: rgba(0, 0, 0, 0);}
+
+        .fullTable {height: 100%;
+        width: 100%;
+        display:table;}
+
+        .table {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+        line-height: 50px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .form {
+        display: inline-block;
+        min-width: 130px;
+        padding: 10px 25px 10px 25px;
+        border-radius: 10px;
+        background: #ffffff;
+        width: 10vw;
+        border: 2px solid #8b4a35;
+        color: #8b4a35;
+        }
+
+        .form:hover {border: 2px solid #5f2d1d;}
+
+        .season {min-width: 120px;
+        display: inline-block;}
+
+        .date {min-width: 120px;
+        display: block;
+        font-size: 1em;
+        }
+
+        .time {min-width: 120px;
+        display: block;
+        font-size: 1em;}
+
+        .colon {display: inline;}
+
+        .icon {display: block;
+        font-size: 1em;
+        }
+
+        .greet {display: block;
+        font-size: 1em;
+        font-weight: bold;
+        }
+
+        .date {display: block;
+        font-variant: small-caps;}
+
+        .hour {display: inline;}
+
+        .minute {display: inline;}
+
+        .second {display: inline;}
+         
+    </style>
+
+
+    <div id="fullTable" class="fullTable">
+        <div id="table" class="table">
+
+            <div id="form" class="form">
+
+        <div id="season" class="season">
+            <div id="icon" class="icon"></div>
+            <div id="greet" class="greet"></div>
+        </div>
+
+        <div id="date" class="date"></div>
+
+        <div id="time" class="time">
+            <div id="hour" class="hour"></div>
+            <div id="colon" class="colon">:</div>
+            <div id="minute" class="minute"></div>
+            <div id="colon" class="colon">:</div>
+            <div id="second" class="second"></div>
+        </div>
+
+    </div>
+
+        </div>
+    </div>
+
+    <script>
+
+function date() {
+var today = new Date();
+document.getElementById('date').innerHTML = today.toDateString();
+}
+
+
+
+
+
+        function currentTime() {
+  let date = new Date(); 
+  let hh = date.getHours();
+  let mm = date.getMinutes();
+  let ss = date.getSeconds();
+  let session = "AM";
+
+    
+  if(hh > 12){
+      session = "PM";
+   }
+
+   hh = (hh < 10) ? "0" + hh : hh;
+   mm = (mm < 10) ? "0" + mm : mm;
+   ss = (ss < 10) ? "0" + ss : ss;
+
+   if (hh < 12) {
+    greet = 'Good Morning';
+        icon = '<i class="fa-solid fa-sun fa-2xl" style="color: #8b4a35;"></i>';
+   }
+        
+    else if (hh >= 12 && hh <= 17) {
+        greet = 'Good Afternoon';
+        icon = '<i class="fa-solid fa-cloud-sun fa-2xl" style="color: #8b4a35;"></i>';
+    }
+        
+    else if (hh >= 17 && hh <= 24) {
+        greet = 'Good Evening';
+        icon = '<i class="fa-solid fa-moon fa-2xl" style="color: #8b4a35"></i>';
+    }
+       
+    
+   let time = hh + ":" + mm + ":" + ss + " " + session;
+
+  document.getElementById('icon').innerHTML = icon;
+  document.getElementById('greet').innerHTML = greet;
+  document.getElementById("hour").innerText = hh; 
+  document.getElementById("minute").innerText = mm; 
+  document.getElementById("second").innerText = ss; 
+  var t = setTimeout(function(){ currentTime() }, 1000); 
+
+}
+
+currentTime();
+
+function dateTime() {
+date();
+setTimeout(dateTime, 500);
+}
+
+dateTime()
+
+
+
+
+    </script>
+  </body>
+
+
+
+</html>
